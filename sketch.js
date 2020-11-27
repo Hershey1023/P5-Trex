@@ -164,7 +164,7 @@ function spawnClouds() {
 function spawnObstacles() {
   if(frameCount % 60 === 0) {
     var obstacle = createSprite(600,165,10,40);
-    obstacle.velocityX = -4;
+    obstacle.velocityX = -3;
     
     //generate random obstacles
     var rand = Math.round(random(1,6));
@@ -186,7 +186,7 @@ function spawnObstacles() {
     
     //assign scale and lifetime to the obstacle           
     obstacle.scale = 0.5;
-    obstacle.lifetime = 100;
+    obstacle.lifetime = 200;
     //add each obstacle to the group
     ObstaclesGroup.add(obstacle);
   }

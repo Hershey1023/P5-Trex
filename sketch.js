@@ -69,7 +69,7 @@ restart.visible = false;
 }
 
 function draw() {
-  background(180);
+  background("blue");
   
   count = count + Math.round(getFrameRate()/60);
   text("Score: "+ count, 500,50);
@@ -79,8 +79,8 @@ function draw() {
     ground.velocityX = -(6 + 3*count/100);
     
     if (count>0 && count%100 === 0){
-      playSound("checkPoint.mp3");
-    }
+      checkpointSound.play();
+   }
     
     if (ground.x < 0){
       ground.x = ground.width/2;
@@ -186,7 +186,7 @@ function spawnObstacles() {
     
     //assign scale and lifetime to the obstacle           
     obstacle.scale = 0.5;
-    obstacle.lifetime = 300;
+    obstacle.lifetime = 100;
     //add each obstacle to the group
     ObstaclesGroup.add(obstacle);
   }
